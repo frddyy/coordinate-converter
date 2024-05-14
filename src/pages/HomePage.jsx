@@ -1,6 +1,6 @@
-import React from "react";
-import CoordinateConverter from "../components/CoordinateConverter";
-import MarkerManager from "../components/MarkerManager";
+import React from 'react';
+import CoordinateConverter from '../components/CoordinateConverter';
+import MarkerManager from '../components/MarkerManager';
 
 /**
  * HomePage component to display the main page content.
@@ -10,13 +10,17 @@ const HomePage = () => {
   const [coordinates, setCoordinates] = React.useState(null);
 
   const handleConversion = (dd) => {
-    const [lat, lon] = dd.split(",").map(Number);
+    const [lat, lon] = dd.split(',').map(Number);
     setCoordinates([lon, lat]);
+  };
+
+  const handleAddToMap = (coords) => {
+    setCoordinates([coords.longitude, coords.latitude]);
   };
 
   return (
     <div>
-      <div className="mx-auto max-width p-4 m-4">
+       <div className="mx-auto max-width p-4 m-4">
         <h2 className="text-4xl font-bold tracking-tight text-black text-center">
           Welcome to the Coordinate Converter App
         </h2>
@@ -26,10 +30,11 @@ const HomePage = () => {
           aliqua.
         </p> */}
       </div>
-      <CoordinateConverter onConvert={handleConversion} />
+      <CoordinateConverter onConvert={handleConversion} onAddToMap={handleAddToMap} />
       <MarkerManager coordinates={coordinates} />
     </div>
   );
 };
 
 export default HomePage;
+
