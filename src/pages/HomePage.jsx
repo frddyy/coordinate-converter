@@ -1,40 +1,28 @@
-import React from 'react';
-import CoordinateConverter from '../components/CoordinateConverter';
-import MarkerManager from '../components/MarkerManager';
+import React, { useState, useCallback } from "react";
+import MarkerManager from "../components/MarkerManager";
+import ConverterModal from "../components/ConverterModal";
 
-/**
- * HomePage component to display the main page content.
- * @component
- */
 const HomePage = () => {
-  const [coordinates, setCoordinates] = React.useState(null);
+  const [coordinates, setCoordinates] = useState(null);
+  const [mapCoordinates, setMapCoordinates] = useState(null);
 
-  const handleConversion = (dd) => {
-    const [lat, lon] = dd.split(',').map(Number);
-    setCoordinates([lon, lat]);
-  };
+  const handleAddToMap = useCallback((coords) => {
+    setCoordinates(coords);
+  }, []);
 
-  const handleAddToMap = (coords) => {
-    setCoordinates([coords.longitude, coords.latitude]);
-  };
+  const handleMapClick = useCallback((coords) => {
+    setMapCoordinates(coords);
+  }, []);
 
   return (
-    <div>
-       <div className="mx-auto max-width p-4 m-4">
-        <h2 className="text-4xl font-bold tracking-tight text-black text-center">
-          Welcome to the Coordinate Converter App
-        </h2>
-        {/* <p className="mt-6 text-lg leading-8 text-gray-300">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua.
-        </p> */}
-      </div>
-      <CoordinateConverter onConvert={handleConversion} onAddToMap={handleAddToMap} />
-      <MarkerManager coordinates={coordinates} />
+    <div className="relative h-screen w-screen">
+      <ConverterModal
+        onAddToMap={handleAddToMap}
+        mapCoordinates={mapCoordinates}
+      />
+      <MarkerManager coordinates={coordinates} onMapClick={handleMapClick} />
     </div>
   );
 };
 
 export default HomePage;
-
