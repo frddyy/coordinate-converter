@@ -1,4 +1,3 @@
-```markdown
 # Coordinate Converter
 
 Coordinate Converter is a React-based application designed to help users seamlessly convert and visualize geographic coordinates between Degrees, Minutes, Seconds (DMS) and Decimal Degrees (DD) formats. The application includes features for creating, updating, and visualizing coordinates on a map.
@@ -170,5 +169,3 @@ tailwind.config.js
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
-
-```
