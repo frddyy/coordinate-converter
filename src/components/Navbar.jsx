@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+/**
+ * Navbar component for navigation.
+ * @returns {JSX.Element} The rendered component
+ */
+
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);

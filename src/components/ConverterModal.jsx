@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import DMSForm from "./DMSForm";
 import DDForm from "./DDForm";
 
+/**
+ * ConverterModal component for displaying coordinate conversion forms in a modal.
+ * @param {Object} props - Component properties
+ * @param {Function} props.onAddToMap - Callback to add coordinates to the map
+ * @param {Object} props.mapCoordinates - Coordinates from the map
+ * @returns {JSX.Element} The rendered component
+ */
+
 const ConverterModal = ({ onAddToMap, mapCoordinates }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("DMS to DD");

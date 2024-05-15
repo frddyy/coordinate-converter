@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+```markdown
+# Coordinate Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Coordinate Converter is a React-based application designed to help users seamlessly convert and visualize geographic coordinates between Degrees, Minutes, Seconds (DMS) and Decimal Degrees (DD) formats. The application includes features for creating, updating, and visualizing coordinates on a map.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Home Page](#home-page)
+  - [About Page](#about-page)
+- [Running Tests](#running-tests)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Convert coordinates from DMS to DD format and vice versa.
+- Create coordinates directly from the map.
+- Update existing coordinates.
+- Visualize coordinates on an interactive map.
+- User-friendly interface with responsive design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To get started with the Coordinate Converter, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Ensure you have the following installed on your system:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+    ```bash
+    git clone https://github.com/frddyy/coordinate-converter.git
+    cd coordinate-converter
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install the dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```bash
+    npm start
+    ```
 
-## Learn More
+The application will be available at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Home Page
 
-### Code Splitting
+- Enter coordinates in the appropriate format (DMS or DD) and click "Convert" to convert the coordinates.
+- Add the converted coordinates to the map to visualize their location.
+- Click on the map to generate coordinates and visualize their location instantly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### About Page
 
-### Analyzing the Bundle Size
+- Learn more about the Coordinate Converter and its features.
+- Understand the case study for developing conversion functions for geographic coordinates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Running Tests
 
-### Making a Progressive Web App
+To run the tests for the application, use the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm test
+```
 
-### Advanced Configuration
+This will run all the unit tests for the components and utility functions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Folder Structure
 
-### Deployment
+The folder structure of the project is as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+public/
+  favicon.ico
+  index.html
+  logo192.png
+  logo512.png
+  manifest.json
+  robots.txt
+src/
+  components/
+    ConverterModal.jsx
+    DDForm.jsx
+    DMSForm.jsx
+    MarkerManager.jsx
+    Navbar.jsx
+  pages/
+    AboutPage.jsx
+    HomePage.jsx
+  tests/
+    AboutPage.test.jsx
+    ConverterModal.test.jsx
+    coordinateUtils.test.js
+    DDForm.test.jsx
+    DMSForm.test.jsx
+    HomePage.test.jsx
+    MapComponent.test.jsx
+    MarkerManager.test.jsx
+    Navbar.test.jsx
+  utils/
+    coordinateUtils.js
+  App.js
+  index.css
+  index.js
+  setupTests.js
+.eslintrc.json
+.gitignore
+babel.config.js
+jest.config.js
+package-lock.json
+package.json
+README.md
+tailwind.config.js
+```
 
-### `npm run build` fails to minify
+### Explanation of Folders and Files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `public/` - Contains static files for the application.
+- `src/` - The main source code directory.
+  - `components/` - Contains React components used in the application.
+    - `ConverterModal.jsx` - Modal component for converting coordinates.
+    - `DDForm.jsx` - Form component for entering and converting DD coordinates.
+    - `DMSForm.jsx` - Form component for entering and converting DMS coordinates.
+    - `MarkerManager.jsx` - Component for managing map markers.
+    - `Navbar.jsx` - Navigation bar component.
+  - `pages/` - Contains page components.
+    - `AboutPage.jsx` - The about page of the application.
+    - `HomePage.jsx` - The home page of the application.
+  - `tests/` - Contains test files.
+    - `AboutPage.test.jsx` - Tests for `AboutPage.jsx`.
+    - `ConverterModal.test.jsx` - Tests for `ConverterModal.jsx`.
+    - `coordinateUtils.test.js` - Tests for `coordinateUtils.js`.
+    - `DDForm.test.jsx` - Tests for `DDForm.jsx`.
+    - `DMSForm.test.jsx` - Tests for `DMSForm.jsx`.
+    - `HomePage.test.jsx` - Tests for `HomePage.jsx`.
+    - `MarkerManager.test.jsx` - Tests for `MarkerManager.jsx`.
+    - `Navbar.test.jsx` - Tests for `Navbar.jsx`.
+  - `utils/` - Contains utility functions.
+    - `coordinateUtils.js` - Utility functions for coordinate conversion.
+  - `App.js` - The main app component.
+  - `index.css` - The main stylesheet.
+  - `index.js` - The main entry point for the application.
+  - `setupTests.js` - Setup for tests.
+- `.eslintrc.json` - ESLint configuration file.
+- `.gitignore` - Git ignore file.
+- `babel.config.js` - Babel config file.
+- `jest.config.js` - Jest config file.
+- `package-lock.json` - Automatically generated file for npm.
+- `package.json` - NPM package configuration file.
+- `README.md` - This README file.
+- `tailwind.config.js` - Tailwind CSS configuration file.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+
+```

@@ -10,6 +10,14 @@ import VectorLayer from "ol/layer/Vector";
 import { Style, Icon } from "ol/style";
 import "ol/ol.css";
 
+/**
+ * MarkerManager component for managing markers on the map.
+ * @param {Object} props - Component properties
+ * @param {Object} props.coordinates - Coordinates to display on the map
+ * @param {Function} props.onMapClick - Callback function when the map is clicked
+ * @returns {JSX.Element} The rendered component
+ */
+
 const MarkerManager = ({ coordinates, onMapClick }) => {
   const mapRef = useRef();
   const markerLayerRef = useRef();
@@ -35,7 +43,7 @@ const MarkerManager = ({ coordinates, onMapClick }) => {
         style: new Style({
           image: new Icon({
             src: "https://openlayers.org/en/latest/examples/data/icon.png",
-            scale: 0.2, // Perbesar ukuran marker
+            scale: 0.2,
           }),
         }),
       });

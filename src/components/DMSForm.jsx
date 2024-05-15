@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { parseDMS } from "../utils/coordinateUtils";
 
+/**
+ * DMSForm component for converting DMS to Decimal Degrees.
+ * @param {Object} props - Component properties
+ * @param {Function} props.onConvert - Callback function for conversion
+ * @returns {JSX.Element} The rendered component
+ */
+
 const DMSForm = ({ onConvert }) => {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
@@ -64,7 +71,9 @@ const DMSForm = ({ onConvert }) => {
           required
         />
         {latitudeError && (
-          <p className="text-red-500 text-xs mt-1">{latitudeError}</p>
+          <p data-testid="latitude-error" className="text-red-500 text-xs mt-1">
+            {latitudeError}
+          </p>
         )}
       </div>
       <h5 className="block mb-2 text-md font-semibold text-gray-900 dark:text-white">
@@ -85,7 +94,12 @@ const DMSForm = ({ onConvert }) => {
           required
         />
         {longitudeError && (
-          <p className="text-red-500 text-xs mt-1">{longitudeError}</p>
+          <p
+            data-testid="longitude-error"
+            className="text-red-500 text-xs mt-1"
+          >
+            {longitudeError}
+          </p>
         )}
       </div>
       <button

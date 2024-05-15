@@ -1,13 +1,18 @@
 import React from "react";
 
+/**
+ * AboutPage component for displaying information about the Coordinate Converter.
+ * @returns {JSX.Element} The rendered component
+ */
+
 const AboutPage = () => {
   return (
     <section className="">
       <div className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-              About Coordinate Converter
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">
+              Coordinate Converter
             </h2>
             <p className="text-lg text-gray-600 leading-8 mb-6">
               The Coordinate Converter is a powerful tool designed to help users
@@ -77,7 +82,7 @@ const AboutPage = () => {
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
                     <img
-                      src="https://www.svgrepo.com/show/503163/api-settings.svg"
+                      src="https://www.svgrepo.com/show/525251/bolt-circle.svg"
                       alt="Create and Convert Coordinate from Form"
                     />
                   </div>
@@ -94,7 +99,7 @@ const AboutPage = () => {
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
                     <img
-                      src="https://www.svgrepo.com/show/503138/webpack.svg"
+                      src="https://www.svgrepo.com/show/525251/bolt-circle.svg"
                       alt="Create Coordinate from Map"
                     />
                   </div>
@@ -111,7 +116,7 @@ const AboutPage = () => {
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
                     <img
-                      src="https://www.svgrepo.com/show/511771/dashboard-671.svg"
+                      src="https://www.svgrepo.com/show/525251/bolt-circle.svg"
                       alt="Update Existing Coordinate"
                     />
                   </div>
@@ -134,10 +139,10 @@ const AboutPage = () => {
               If you have any questions or feedback, feel free to reach out to
               us at{" "}
               <a
-                href="mailto:support@coordinateconverter.com"
+                href="mailto:m.ferdyfauzan@gmail.com"
                 className="text-blue-500 underline"
               >
-                support@coordinateconverter.com
+                m.ferdyfauzan@gmail.com
               </a>
               .
             </p>

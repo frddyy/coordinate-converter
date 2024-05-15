@@ -2,6 +2,11 @@ import React, { useState, useCallback } from "react";
 import MarkerManager from "../components/MarkerManager";
 import ConverterModal from "../components/ConverterModal";
 
+/**
+ * HomePage component for displaying the main page with map and converter modal.
+ * @returns {JSX.Element} The rendered component
+ */
+
 const HomePage = () => {
   const [coordinates, setCoordinates] = useState(null);
   const [mapCoordinates, setMapCoordinates] = useState(null);
